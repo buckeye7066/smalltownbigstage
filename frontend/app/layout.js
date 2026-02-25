@@ -2,6 +2,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "Small Town Big Stage | May 30, 2026 | Vermilion, OH",
+  // Deploy: full site from buckeye7066/smalltownbigstage (frontend)
   description:
     "Live concert featuring Cody McCarver, John Schneider, and Mike Neff & Friends at Vermilion Sailor Stadium. Gates open 5:30 PM, show at 6:30 PM. Get your tickets now!",
   openGraph: {
