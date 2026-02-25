@@ -2,6 +2,8 @@
 
 Follow these steps in order. The site will be live at **www.smalltownbigstage.org** when done.
 
+**Want to go live without Stripe first?** → Use **[MAKE-LIVE-NOW.md](./MAKE-LIVE-NOW.md)** (add Stripe later).
+
 **Repo:** https://github.com/buckeye7066/smalltownbigstage
 
 ---
@@ -16,8 +18,8 @@ Follow these steps in order. The site will be live at **www.smalltownbigstage.or
 5. Add **Variables** (Environment Variables):
    - `FRONTEND_URL` = `https://www.smalltownbigstage.org`
    - `PORT` = `3001`
-   - `STRIPE_SECRET_KEY` = your Stripe secret key (from [dashboard.stripe.com](https://dashboard.stripe.com/apikeys))
-   - `STRIPE_WEBHOOK_SECRET` = leave empty for now (you’ll add after Step 3).
+   - `STRIPE_SECRET_KEY` = your Stripe secret key (from [dashboard.stripe.com](https://dashboard.stripe.com/apikeys)); can leave empty to go live first and add later.
+   - `STRIPE_WEBHOOK_SECRET` = leave empty until you add Stripe webhook (Step 4).
 6. **Deploy** (or let it auto-deploy). Wait until it’s running.
 7. Copy the **public URL** (e.g. `https://smalltownbigstage-production.up.railway.app`). You need it for the frontend and Stripe.
 
