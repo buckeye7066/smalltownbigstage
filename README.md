@@ -6,6 +6,8 @@ Featuring: Cody McCarver • John Schneider • Mike Neff & Friends
 
 Website: [www.smalltownbigstage.org](https://www.smalltownbigstage.org)
 
+**→ [Go live at www.smalltownbigstage.org (Vercel + Railway + GoDaddy)](./GO-LIVE-www.smalltownbigstage.org.md)** — step-by-step so the site is hosted and the domain points to it.
+
 ---
 
 ## Architecture
