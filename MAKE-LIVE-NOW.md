@@ -1,6 +1,14 @@
 # Make www.smalltownbigstage.org live now (Stripe later)
 
-Do these in order. **Stripe:** add your Stripe link/keys later; the site will go live without payments first.
+**Easiest: run the script** (on your PC, in PowerShell):
+
+1. Install CLIs once: `npm install -g @railway/cli vercel`
+2. Double-click or run: `powershell -ExecutionPolicy Bypass -File deploy-live.ps1`
+3. When it opens your browser, log in to Railway (and Vercel if asked). Then run the script again.
+4. When it asks for your Railway URL, get it from [railway.app](https://railway.app) dashboard → your project → Settings → Domains (or Deployments).
+5. After deploy, do the GoDaddy DNS step below (one time).
+
+**Stripe:** add your Stripe keys later in Railway → Variables.
 
 ---
 
