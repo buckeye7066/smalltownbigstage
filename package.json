@@ -1,0 +1,12 @@
+{
+  "name": "smalltownbigstage-root",
+  "private": true,
+  "scripts": {
+    "extract": "node scripts/extract_smalltownbigstage.mjs",
+    "copy-doc": "node scripts/copy_concert_doc.mjs",
+    "prebuild": "npm run extract && npm run copy-doc"
+  },
+  "devDependencies": {
+    "tar": "^7.0.0"
+  }
+}

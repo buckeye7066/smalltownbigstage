@@ -5,3 +5,9 @@ node_modules/
 *.log
 .DS_Store
 .vercel
+
+# Build-time artifacts (generated from assets/source and assets/docs)
+frontend/public/smalltownbigstage/
+frontend/public/downloads/Concert info.docx
+public/smalltownbigstage/
+public/downloads/Concert info.docx

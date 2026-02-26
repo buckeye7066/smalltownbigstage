@@ -1,10 +1,18 @@
 require("dotenv").config();
+const path = require("path");
+const fs = require("fs");
 const express = require("express");
 const cors = require("cors");
 const { TICKET_TYPES, ADDONS, SPONSOR_PACKAGES } = require("./config/tickets");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+// Serve artifact build output (smalltownbigstage + downloads) when running in Docker/Railway
+const publicDir = path.join(__dirname, "..", "public");
+if (fs.existsSync(publicDir)) {
+  app.use(express.static(publicDir));
+}
 
 // --- In-Memory Store (replace with DB in production) ---
 // Seat maps for assigned seating (On Stage + VIP)
@@ -339,6 +347,23 @@ app.post("/api/sponsor-inquiry", (req, res) => {
   res.json({ success: true, message: "Thank you! We will contact you soon." });
 });
 
+function countFiles(dir) {
+  if (!fs.existsSync(dir) || !fs.statSync(dir).isDirectory()) return 0;
+  let n = 0;
+  for (const name of fs.readdirSync(dir)) {
+    const full = path.join(dir, name);
+    n += fs.statSync(full).isDirectory() ? countFiles(full) : 1;
+  }
+  return n;
+}
+
 app.listen(PORT, () => {
   console.log(`Small Town Big Stage API running on port ${PORT}`);
+  const smalltownPath = path.join(publicDir, "smalltownbigstage");
+  const docxPath = path.join(publicDir, "downloads", "Concert info.docx");
+  const smalltownExists = fs.existsSync(smalltownPath) && fs.statSync(smalltownPath).isDirectory();
+  const docxExists = fs.existsSync(docxPath) && fs.statSync(docxPath).isFile();
+  const smalltownCount = smalltownExists ? countFiles(smalltownPath) : 0;
+  console.log(`[Artifacts] public/smalltownbigstage/: ${smalltownExists ? "yes, " + smalltownCount + " files" : "missing"}`);
+  console.log(`[Artifacts] public/downloads/Concert info.docx: ${docxExists ? "yes" : "missing"}`);
 });
