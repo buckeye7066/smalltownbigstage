@@ -290,7 +290,7 @@ function SponsorSection() {
       <div className="section-header">
         <p className="section-label">Partnerships</p>
         <h2 className="section-title">Sponsorship Opportunities</h2>
-        <p className="section-subtitle">Put your brand in front of thousands. Contact us for details.</p>
+        <p className="section-subtitle">Put your brand in front of thousands. Email dr.johnwhite@axiombiolabs.org for pricing.</p>
       </div>
 
       {/* Headline Sponsor Feature */}
@@ -323,7 +323,7 @@ function SponsorSection() {
             {g.items.map((sp) => (
               <div key={sp.name} className="sponsor-card">
                 <div className="sponsor-card-name">{sp.name}</div>
-                <div className="sponsor-card-price">{sp.price}</div>
+                <div className="sponsor-card-price">Email for Pricing</div>
                 <div className="sponsor-card-desc">{sp.desc}</div>
                 <div className="sponsor-card-avail">{sp.avail}</div>
               </div>
@@ -332,7 +332,7 @@ function SponsorSection() {
         </div>
       ))}
       <div style={{ textAlign: "center", marginTop: "2rem" }}>
-        <a href="mailto:info@smalltownbigstage.org" className="hero-cta" style={{ fontSize: "1rem", padding: "0.85rem 2rem" }}>Inquire About Sponsorship</a>
+        <a href="mailto:dr.johnwhite@axiombiolabs.org" className="hero-cta" style={{ fontSize: "1rem", padding: "0.85rem 2rem" }}>Inquire About Sponsorship</a>
       </div>
     </section>
   );
