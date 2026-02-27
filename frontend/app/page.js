@@ -463,7 +463,7 @@ export default function HomePage() {
           <h2 className="section-title">Seating Map</h2>
           <p className="section-subtitle">Vermilion Sailor Stadium — on-field seating with the stage on the east end</p>
         </div>
-        <div className="seating-map-container"><img src="/seating-map.png" alt="Sailor Stadium seating map" className="seating-map-img" /></div>
+        <div className="seating-map-container"><img src="/seating-map.png" alt="Sailor Stadium seating map" className="seating-map-img" /><p style={{ textAlign: "center", color: "var(--text-muted)", fontSize: "0.85rem", marginTop: "1rem", fontStyle: "italic" }}>*Seating graphic is not to scale. Actual layout may vary.</p></div>
       </section>
 
       <SponsorSection />
